@@ -64,7 +64,7 @@ class Database extends AbstractDriver
         return $collection->keyBy('code')
             ->map(function ($item) {
                 return [
-                    'id' => $item->id,
+                    'currency_id' => $item->currency_id,
                     'name' => $item->name,
                     'code' => strtoupper($item->code),
                     'symbol' => $item->symbol,
