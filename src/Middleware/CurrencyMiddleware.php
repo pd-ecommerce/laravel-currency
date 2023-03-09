@@ -4,6 +4,7 @@ namespace Torann\Currency\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class CurrencyMiddleware
 {
@@ -93,7 +94,7 @@ class CurrencyMiddleware
         currency()->setUserCurrency($currency);
 
         // Save it for later too!
-        $request->getSession()->put(['currency' => $currency]);
+        Session::put(['currency' => $currency]);
 
         return $currency;
     }
